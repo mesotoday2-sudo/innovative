@@ -51,7 +51,6 @@
             padding: 0 20px;
         }
 
-        /* Header Styles */
         header {
             position: sticky;
             top: 0;
@@ -116,7 +115,6 @@
             gap: 16px;
         }
 
-        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -155,7 +153,6 @@
             text-align: center;
         }
 
-        /* Button Styles */
         .btn {
             padding: 12px 24px;
             border-radius: var(--radius);
@@ -193,7 +190,6 @@
             color: var(--primary);
         }
 
-        /* Theme Toggle */
         .theme-toggle {
             background: none;
             border: none;
@@ -214,7 +210,6 @@
             background-color: var(--panel);
         }
 
-        /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             position: relative;
@@ -246,7 +241,6 @@
             flex-wrap: wrap;
         }
 
-        /* Glassmorphic Card */
         .glass-card {
             background: rgba(255,255,255,var(--glass-alpha));
             backdrop-filter: blur(10px);
@@ -268,7 +262,6 @@
             box-shadow: 0 12px 24px rgba(0,0,0,0.12);
         }
 
-        /* Section Styling */
         .section {
             padding: 80px 0;
         }
@@ -291,7 +284,6 @@
             margin: 0 auto;
         }
 
-        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -330,7 +322,6 @@
             flex-grow: 1;
         }
 
-        /* Team Grid */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -367,7 +358,6 @@
             font-weight: 500;
         }
 
-        /* Values Section */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -392,7 +382,6 @@
             color: var(--primary);
         }
 
-        /* Contact Section */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -456,7 +445,6 @@
             box-shadow: 0 0 0 3px rgba(184, 149, 56, 0.2);
         }
 
-        /* QR Code Section */
         .qr-section {
             text-align: center;
             margin-top: 30px;
@@ -494,7 +482,6 @@
             font-size: 14px;
         }
 
-        /* Footer */
         footer {
             background-color: var(--panel);
             padding: 60px 0 30px;
@@ -557,7 +544,6 @@
             font-size: 14px;
         }
 
-        /* Responsive Design */
         @media (max-width: 1024px) {
             .hero h1 {
                 font-size: 40px;
@@ -592,9 +578,47 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .glass-card {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
         }
 
-        /* Animation Classes */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-header h2 {
+                font-size: 24px;
+            }
+            
+            .section-header p {
+                font-size: 16px;
+            }
+            
+            .service-card, .team-card, .value-item {
+                padding: 20px 15px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -608,7 +632,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -643,7 +666,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -661,7 +683,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="section" id="services">
         <div class="container">
             <div class="section-header">
@@ -733,7 +754,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
             <div class="section-header">
@@ -814,7 +834,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="section" id="team">
         <div class="container">
             <div class="section-header">
@@ -858,7 +877,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
             <div class="section-header">
@@ -906,7 +924,6 @@
                             </div>
                         </div>
                         
-                        <!-- QR Code Section -->
                         <div class="qr-section">
                             <div class="qr-code">
                                 <i class="fas fa-qrcode"></i>
@@ -955,7 +972,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
@@ -1001,12 +1017,10 @@
     </footer>
 
     <script>
-        // Theme Toggle Functionality
         const toggle = document.getElementById('theme-toggle');
         const root = document.documentElement;
         const themeIcon = document.querySelector('.theme-toggle i');
         
-        // Initialize theme from localStorage or system preference
         const saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         if(saved === 'dark') {
             root.setAttribute('data-theme','dark');
@@ -1025,7 +1039,6 @@
             }
         });
 
-        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileNav = document.getElementById('mobile-nav');
         
@@ -1039,7 +1052,6 @@
             }
         });
 
-        // Fade-in animation on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
         
         const fadeInOnScroll = () => {
@@ -1053,11 +1065,9 @@
             });
         };
         
-        // Check on load and scroll
         window.addEventListener('scroll', fadeInOnScroll);
         window.addEventListener('load', fadeInOnScroll);
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1067,7 +1077,6 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
-                    // Close mobile menu if open
                     if (mobileNav.classList.contains('active')) {
                         mobileNav.classList.remove('active');
                         mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
